@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{times}
+\usepackage{amsmath}
+
+\title{Kategorik Veri Çözümlemesi}
+\author{Ramazan Erduran}
+\date{May 2023}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{hacettepe_logo.png}
+        
+        \vspace*{1cm}
+        \Huge
+        \textbf{Kategorik Veri Çözümlemesi Dönem Ödevi}
+
+        \vfill
+        
+        \Large
+        İstatistik \\
+        Hacettepe Üniversitesi \\
+        Ramazan Erduran \\
+        05.05.2023
+        
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+\section{Araştırmanın Hakkında}
+\subsection{Araştırmanın Başlığı}
+Fen Fakültesi Öğrencilerinin İkili İlişkilerinin İncelenmesi.
+
+\subsection{Araştırmanın Amacı}
+
+\subsection{Örnekleme Planlaması}
+Araştırmalar sonucunda Hacettepe Üniversitesi'nin yayınladığı bilgilere dayanarak öğrenci, öğretim üyesi oranı, Tablo. \ref{tab:Öğrenci:Öğretim Üyesi Oranları} 'deki veriler bulunmuştur.
+
+\begin{table}[h]
+
+    \centering
+    \caption{Öğrenci:Öğretim Üyesi Oranları}
+    \label{tab:Öğrenci:Öğretim Üyesi Oranları}
+
+    \begin{tabular}{|p{2.1cm}|p{2.1cm}|p{2.1cm}|p{2.1cm}|p{2.1cm}|}
+        \hline
+         & Tıp ve Sağlık & Fen ve Mühendislik & Sosyal ve Beşeri Bilimler & Toplam \\
+        \hline
+        Öğretim Üyesi'ne Oranı & 16:1 & 35:1 & 46:1 & 30:1 \\
+        \hline
+        Öğretim Elemanı'na Oranı & 6:1 & 22:1 & 23:1 & 14:1 \\
+        \hline
+    \end{tabular}
+    \caption*{\footnotesize Kaynak:\url{https://www.hacettepe.edu.tr/ogretim/sayilarla_ogretim}}
+\end{table}
+
+Ayrıca her bölümün kendi sayfasında öğretim üyelerinin kesin sayıları olduğundan toplam öğrenci sayısının hesaplanmasında belirtilen varsayımlar kullanılmıştır.
+
+\begin{table}[h]
+    \centering
+    \caption{Bölüm Bazlı Akademik Personel Sayısı}
+    \label{tab:Bölüm Bazlı Veriler}
+    
+    \begin{tabular}{|c|c|c|}
+         \hline
+         Bölüm & Öğretim Elemanı Sayısı & Tabaka Ağırlığı\\
+         \hline
+         İstatistik & 26 & 0.13 \\
+         Aktüerya & 6 & 0.03 \\
+         Matematik & 41 & 0.20 \\
+         Kimya & 51 & 0.25 \\
+         Biyoloji & 81 & 0.39 \\
+         \hline
+         Toplam & 205 & 1.00 \\
+         \hline
+    \end{tabular}
+\end{table}
+
+\clearpage
+
+\begin{table}[h]
+    \centering
+    \caption{Bölümlere Göre Öğrenci Sayıları}
+    \label{tab:Bölüm bazlı öğrenci sayıları}
+    \begin{tabular}{|c|c|}
+        \hline
+        Bölüm & Öğrenci Sayısı\\
+        \hline
+        İsatistik & 572 \\
+        Aktüerya & 132 \\
+        Matematik & 902 \\
+        Kimya & 1122 \\
+        Biyoloji & 1782 \\
+        \hline
+        Toplam & 4510 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Tablo \ref{tab:Bölüm bazlı öğrenci sayıları}'deki öğrenci sayıları, Tablo \ref{tab:Öğrenci:Öğretim Üyesi Oranları} ve Tablo \ref{tab:Bölüm Bazlı Veriler}'den hareketle hesaplanmıştır. 
+
+
+\section{Örnekleme Planlaması}
+Tablo \ref{tab:Bölüm bazlı öğrenci sayıları}'den hareketle aşağıdaki formül uygulanarak örneklem sayısı elde edilmiştir:
+$$
+n = N \times \frac{Z^2 \times p \times (1-p)}{d^2 \times (N-1) \times Z^2 \times p \times (1-p)}
+$$
+
+Formülde kullanılan parametreler;
+\begin{itemize}
+    \item Z = 1.96 (\%95 Güven Düzeyinde)
+    \item N = 4510
+    \item d = 10
+    \item p = 0.5
+\end{itemize} şeklindedir. Formül uygulandıktan sonra $n=68.34 \approx 68$ olarak bulunmuştur. Bulunan örneklem sayısı bölümlerin tabakalı ağırlıklarına göre dağıtıldığında toplanması gerekilen örneklem sayısı Tablo \ref{tab:ağırlıklandırılmış örneklem}'deki gibi elde edilmiştir.
+
+\begin{table}[h]
+    \centering
+    \caption{Bölümlere Göre Örneklem Sayısı}
+    \label{tab:ağırlıklandırılmış örneklem}
+    \begin{tabular}{|c|c|}
+         \hline
+         Bölüm & Örneklem Sayısı \\
+         \hline
+         İstatistik & 9 \\
+         Aktüerya & 2 \\
+         Matematik & 14 \\
+         Kimya & 17 \\
+         Biyoloji & 25 \\
+         \hline
+         Toplam & 68 \\
+         \hline
+    \end{tabular}
+\end{table}
+
+\section{Kaynakça}
+\begin{enumerate}
+    \item \href{https://www.hacettepe.edu.tr/ogretim/sayilarla_ogretim}{Hacettepe Üniversitesi fakülte bazlı numerik genel bilgiler}
+    \item \href{https://stat.hacettepe.edu.tr/tr/menu/ogretim_uyeleri-118}{Hacettepe Üniversitesi İstatistik Bölümü akademik personel verileri}
+    \item \href{https://aktuerya.hacettepe.edu.tr/pers_ou.php}{Hacettepe Üniversitesi Aktüerya Bölümü akademik personel verileri}
+    \item \href{https://mat.hacettepe.edu.tr/akademik_personel.html}{Hacettepe Üniversitesi Matematik Bölümü akademik personel verileri}
+    \item \href{https://chem.hacettepe.edu.tr/tr/menu/ogretim_uyeleri-10}{Hacettepe Üniversitesi Kimya Bölümü akademik personel verileri}
+    \item \href{https://biology.hacettepe.edu.tr/tr/akademik_personel-226}{Hacettepe Üniversitesi Biyoloji Bölümü akademik personel verileri}
+\end{enumerate}
+
+\end{document}
+
