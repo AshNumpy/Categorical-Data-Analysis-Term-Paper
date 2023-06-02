@@ -128,7 +128,7 @@ df |>
 
 Kız/erkek arkadaşım telefonumu kurcalayabilir sorusuna tamamen katılanların grubu içinde giyime karışılmasına kısment katılanların oranı 40% tır.
 
-##  Özdeğerler
+## Özdeğerler
 
 ```{r}
 eig.val <- get_eigenvalue(res.ca)

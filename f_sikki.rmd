@@ -1,0 +1,66 @@
+```{r}
+library(tidyverse)
+library(janitor)
+library(MASS)
+```
+# Kısmi İlişki Modeli NxOxO
+
+R = Cinsiyet (Sınıflanabilir)
+C = Yaşanan en uzun ilişki süresi -ay- (sıralanabilir)
+K = Kız/erkek arkadaşın daha önce yaşadığı iliişkilerin önemli olup olmaması (sıralanabilir) -likert 7-
+
+```{r}
+df <- read.csv(file = "./Datasets/processed.csv")
+df <- df |> 
+  dplyr::select(Sex, soru12,likert_7) |> 
+  mutate(o_soru12 = ntile(soru12, n = 5)) 
+
+summary(df$soru12)
+df$o_soru12[df$o_soru12==5] <- "Çok Uzun"
+df$o_soru12[df$o_soru12==4] <- "Uzun"
+df$o_soru12[df$o_soru12==3] <- "Orta"
+df$o_soru12[df$o_soru12==2] <- "Kısa"
+df$o_soru12[df$o_soru12==1] <- "Çok Kısa"
+df$likert_7[df$likert_7 ==1] <- "Hiç Katılmıyorum"
+df$likert_7[df$likert_7 ==2] <- "Kısmen Katılmıyorum"
+df$likert_7[df$likert_7 ==3] <- "Ne Katılıyorum Ne Katılmıyorum"
+df$likert_7[df$likert_7 ==4] <- "Kısmen Katılıyorum"
+df$likert_7[df$likert_7 ==5] <- "Tamamen Katılıyorum"
+
+```
+
+Sorun 12 verisinde hiç ilişki yaşamayanlar olduğu gibi, max 95 ay ilişki yaşayanlar görülmüştür. Soru 12 verisi 1 en az 5 en çok olacak şekilde düzenlendi. 
+
+
+## Çapraz tablonun elde edilmesi.
+```{r}
+tablo <- xtabs(~Sex + o_soru12 + likert_7, data = df)
+tablo <- dplyr::filter(tablo, Freq>0)
+ftable(tablo)
+```
+
+
+
+## Likert Sorusuna göre odds oranlarının elde edilmesi.
+
+```{r}
+library(vcd)
+oddsratio(tablo, log = FALSE)
+```
+
+
+## Breslow-Day ve Tarone testi
+```{r}
+library(DescTools)
+BreslowDayTest(tablo, correct = TRUE) # Tarone's
+  View(tablo)
+```
+
+
+
+
+
+
+
+
+
