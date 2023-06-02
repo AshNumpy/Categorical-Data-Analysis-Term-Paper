@@ -35,6 +35,7 @@ Sorun 12 verisinde hiç ilişki yaşamayanlar olduğu gibi, max 95 ay ilişki ya
 ## Çapraz tablonun elde edilmesi.
 ```{r}
 tablo <- xtabs(~Sex + o_soru12 + likert_7, data = df)
+tablo <- dplyr::filter(tablo, Freq>0)
 ftable(tablo)
 ```
 
@@ -45,15 +46,14 @@ ftable(tablo)
 ```{r}
 library(vcd)
 oddsratio(tablo, log = FALSE)
-
 ```
 
 
 ## Breslow-Day ve Tarone testi
 ```{r}
-
 library(DescTools)
 BreslowDayTest(tablo, correct = TRUE) # Tarone's
+  View(tablo)
 ```
 
 
