@@ -35,7 +35,7 @@ Verilerin analizi süreci 5 başlıkta incelenip metodoloji buna göre geliştir
 ### Projede Kaynakları
 Proje süresince Python ve R programlama dilleriyle birlikte SPSS programı kullanılarak analizler gerçekleştirilmiştir. Analizlere `./Analysis/` kısmından ulaşılabilir. 
 
-Raporlama kısmı LaTex belge düzenleme biçimiyle hazırlanmış olup detaylı raporlamaya `./Reporting/Rapor/` kısmından ulaşılabilir.
+Raporlama kısmı LaTex belge düzenleme biçimiyle hazırlanmış olup detaylı raporlamaya `./Reporting/Proje Raporu/Rapor.pdf` kısmından ulaşılabilir.
 
 Analiz süresince yararlanılan kaynaklar raporlamanın *Kaynakça* kısmından 
 
