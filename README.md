@@ -10,7 +10,7 @@ Projenin amacı, Hacettepe Üniversitesi Fen Fakültesi ö̆grencilerinin ikili 
 Proje sadece Fen Fakültesi öğrencilerini kapsamaktadır. Projenin Hedefi ise Fen Fakültesi öğrencilerinin ikili ilişkilerdeki davranışlarını inceleyip yorumlamak.
 
 ### Proje Yürütücüsü
-Proje yürütücüsü Hacettepe Üniversitesi İstatistik Bölümü Kategorik Veri Çözümlemesi Dersi sorumlusu prof. Dr. Serpil Aktaş Altunay. İletişim Adresleri:
+Proje yürütücüsü Hacettepe Üniversitesi İstatistik Bölümü Kategorik Veri Çözümlemesi Dersi sorumlusu *Prof. Dr. Serpil Aktaş Altunay*. İletişim Adresleri:
 * Web Sayfası: [https://avesis.hacettepe.edu.tr/spxl](https://avesis.hacettepe.edu.tr/spxl)
 * E-Posta: [spxl@hacettepe.edu.tr](mailto:spxl@hacettepe.edu.tr)
 
